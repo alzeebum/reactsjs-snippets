@@ -169,15 +169,13 @@
   "ReactFunctionComponent": {
     "prefix": "rfc",
     "body": [
-      "import React from 'react'",
-      "",
       "function ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}}() {",
       "\treturn (",
       "\t\t$0",
-      "\t)",
+      "\t);",
       "}",
       "",
-      "export default $1",
+      "export default $1;",
       ""
     ],
     "description": "Create a React Function Component"
@@ -185,22 +183,22 @@
   "ReactFunctionComponentWithPropTypes": {
     "prefix": "rfcp",
     "body": [
-      "import React from 'react'",
-      "import PropTypes from 'prop-types'",
+      "import PropTypes from 'prop-types';",
       "",
       "function ${1:${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}}(props) {",
-      "\tconst {} = props",
       "",
       "\treturn (",
       "\t\t$0",
-      "\t)",
+      "\t);",
       "}",
+      "",
+      "$1.defaultProps = {",
+      "};",
       "",
       "$1.propTypes = {",
+      "};",
       "",
-      "}",
-      "",
-      "export default $1",
+      "export default $1;",
       ""
     ],
     "description": "Create a React Function Component with PropTypes"
